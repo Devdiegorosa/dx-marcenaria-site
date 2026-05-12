@@ -10,14 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <!-- ==================== NAVBAR ==================== -->
   <nav class="navbar navbar-expand-lg fixed-top dx-navbar">
     <div class="container">
       <a class="navbar-brand" href="#home">
-        <img src="imagens/logo-dx-bg.png" alt="DX Marcenaria" class="brand-logo">
+        <img src="imagens/logo-dx-bg.png" width="36" alt="DX Marcenaria" class="brand-logo">
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
@@ -36,6 +38,8 @@
     </div>
   </nav>
 
+  
+  <!-- ==================== HERO ==================== -->
   <header id="home" class="hero-section">
     <img src="imagens/moveis-planejados.webp" alt="Móveis planejados de alto padrão" class="hero-bg">
     <div class="hero-overlay"></div>
@@ -56,6 +60,35 @@
     </div>
   </header>
 
+  <!-- ── BARRA DE NÚMEROS — logo abaixo do hero ── -->
+  <div class="stats-bar" aria-label="Números da DX Marcenaria">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <span class="stat-num" data-target="15">0</span><span class="stat-suf">+</span>
+          <span class="stat-label">Anos de experiência</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="800">0</span><span class="stat-suf">+</span>
+          <span class="stat-label">Projetos realizados</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="100">0</span><span class="stat-suf">%</span>
+          <span class="stat-label">Satisfação garantida</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="5">0</span><span class="stat-suf">★</span>
+          <span class="stat-label">Avaliação no Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
   <main>
     <section id="sobre" class="section-padding bg-black-premium">
       <div class="container">
@@ -175,29 +208,283 @@
       </div>
     </section>
 
+    <!-- ═══════════ PORTFÓLIO CARROSSEL ═══════════ -->
     <section id="projetos" class="section-padding bg-black-premium">
       <div class="container">
-        <div class="row align-items-end mb-5">
-          <div class="col-lg-7">
+
+        <!-- Cabeçalho + filtros -->
+        <div class="row align-items-end mb-5 g-4">
+          <div class="col-lg-6">
             <span class="eyebrow">Portfólio</span>
-            <h2 class="section-title">Projetos com presença, proporção e exclusividade.</h2>
+            <h2 class="section-title">Projetos com presença,<br>proporção e <em style="font-style:italic;color:var(--gold)">exclusividade.</em></h2>
           </div>
-          <div class="col-lg-5">
-            <p class="section-text mb-0">Galeria visual para destacar ambientes reais, detalhes de acabamento e soluções personalizadas.</p>
+          <div class="col-lg-6 d-flex flex-column align-items-lg-end gap-3">
+            <p class="section-text mb-0 text-lg-end">Ambientes reais executados pela DX Marcenaria em todo o Rio de Janeiro.</p>
+            <div class="pf-filters" role="tablist" aria-label="Filtrar projetos">
+              <button class="pf-filter active" data-filter="all"         role="tab" aria-selected="true">Todos</button>
+              <button class="pf-filter"         data-filter="cozinha"    role="tab" aria-selected="false">Cozinha</button>
+              <button class="pf-filter"         data-filter="closet"     role="tab" aria-selected="false">Closet</button>
+              <button class="pf-filter"         data-filter="living"     role="tab" aria-selected="false">Living</button>
+              <button class="pf-filter"         data-filter="dormitorio" role="tab" aria-selected="false">Dormitório</button>
+              <button class="pf-filter"         data-filter="office"     role="tab" aria-selected="false">Office</button>
+            </div>
           </div>
         </div>
 
-        <div class="portfolio-grid">
-          <div class="portfolio-item large">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Projeto de marcenaria premium">
+      </div><!-- /container header -->
+
+      <!-- Carrossel — full width -->
+      <div class="pf-carousel-wrap">
+        <div class="pf-carousel" id="pfCarousel" role="region" aria-label="Carrossel de projetos">
+
+          <article class="pf-slide" data-cat="cozinha">
+            <div class="pf-slide__img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Cozinha planejada — Residência Leblon" loading="eager"></div>
+            <div class="pf-slide__info">
+              <span class="pf-cat">Cozinha</span>
+              <h3 class="pf-name">Residência Leblon</h3>
+              <span class="pf-area">148 m²  ·  Leblon, Rio de Janeiro</span>
+            </div>
+          </article>
+
+          <article class="pf-slide" data-cat="closet">
+            <div class="pf-slide__img"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80" alt="Closet planejado — Penthouse Ipanema" loading="lazy"></div>
+            <div class="pf-slide__info">
+              <span class="pf-cat">Closet</span>
+              <h3 class="pf-name">Penthouse Ipanema</h3>
+              <span class="pf-area">32 m²  ·  Ipanema, Rio de Janeiro</span>
+            </div>
+          </article>
+
+          <article class="pf-slide" data-cat="living">
+            <div class="pf-slide__img"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Living sofisticado — Residência Lagoa" loading="lazy"></div>
+            <div class="pf-slide__info">
+              <span class="pf-cat">Living</span>
+              <h3 class="pf-name">Residência Lagoa</h3>
+              <span class="pf-area">210 m²  ·  Lagoa, Rio de Janeiro</span>
+            </div>
+          </article>
+
+          <article class="pf-slide" data-cat="dormitorio">
+            <div class="pf-slide__img"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=80" alt="Suíte master — Barra da Tijuca" loading="lazy"></div>
+            <div class="pf-slide__info">
+              <span class="pf-cat">Dormitório</span>
+              <h3 class="pf-name">Suíte Barra da Tijuca</h3>
+              <span class="pf-area">54 m²  ·  Barra da Tijuca, Rio de Janeiro</span>
+            </div>
+          </article>
+
+          <article class="pf-slide" data-cat="office">
+            <div class="pf-slide__img"><img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=900&q=80" alt="Home office premium — Studio Gávea" loading="lazy"></div>
+            <div class="pf-slide__info">
+              <span class="pf-cat">Home Office</span>
+              <h3 class="pf-name">Studio Gávea</h3>
+              <span class="pf-area">28 m²  ·  Gávea, Rio de Janeiro</span>
+            </div>
+          </article>
+
+          <article class="pf-slide" data-cat="cozinha">
+            <div class="pf-slide__img"><img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=900&q=80" alt="Cozinha com ilha — São Conrado" loading="lazy"></div>
+            <div class="pf-slide__info">
+              <span class="pf-cat">Cozinha</span>
+              <h3 class="pf-name">Residência São Conrado</h3>
+              <span class="pf-area">96 m²  ·  São Conrado, Rio de Janeiro</span>
+            </div>
+          </article>
+
+          <article class="pf-slide" data-cat="closet">
+            <div class="pf-slide__img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80" alt="Closet feminino — Botafogo" loading="lazy"></div>
+            <div class="pf-slide__info">
+              <span class="pf-cat">Closet</span>
+              <h3 class="pf-name">Apartamento Botafogo</h3>
+              <span class="pf-area">18 m²  ·  Botafogo, Rio de Janeiro</span>
+            </div>
+          </article>
+
+          <article class="pf-slide" data-cat="living">
+            <div class="pf-slide__img"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="Living cobertura — Recreio" loading="lazy"></div>
+            <div class="pf-slide__info">
+              <span class="pf-cat">Living</span>
+              <h3 class="pf-name">Cobertura Recreio</h3>
+              <span class="pf-area">320 m²  ·  Recreio, Rio de Janeiro</span>
+            </div>
+          </article>
+
+        </div><!-- /pf-carousel -->
+
+        <!-- Controles -->
+        <div class="pf-carousel-controls container">
+          <button class="pf-ctrl pf-ctrl--prev" id="pfPrev" aria-label="Projeto anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="pf-dots" id="pfDots" aria-label="Slides do carrossel" role="tablist"></div>
+          <button class="pf-ctrl pf-ctrl--next" id="pfNext" aria-label="Próximo projeto">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+      </div><!-- /pf-carousel-wrap -->
+    </section>
+
+    <!-- ═══════════ AVALIAÇÕES ═══════════ -->
+    <section class="reviews-section bg-graphite" id="avaliacoes" aria-label="Avaliações de clientes">
+      <div class="container">
+
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6">
+            <span class="eyebrow">O que dizem nossos clientes</span>
+            <h2 class="section-title">Avaliações<br><em style="font-style:italic;color:var(--gold)">reais.</em></h2>
           </div>
-          <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Ambiente planejado moderno">
-          </div>
-          <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Interior sofisticado">
+          <div class="col-lg-5 offset-lg-1 d-flex align-items-center gap-3 mt-4 mt-lg-0">
+            <div class="reviews-score">
+              <span class="reviews-score__num">5.0</span>
+              <div>
+                <div class="reviews-stars" aria-label="5 estrelas">★★★★★</div>
+                <span class="reviews-score__label">Google Reviews</span>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="reviews-track-wrap">
+          <div class="reviews-track" id="reviewsTrack">
+
+            <div class="review-card">
+              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="review-text">"A DX transformou completamente nossa cozinha. Acabamento impecável, prazo cumprido e atendimento primoroso do começo ao fim. Superou todas as expectativas."</p>
+              <div class="review-author">
+                <div class="review-avatar" aria-hidden="true">AM</div>
+                <div>
+                  <span class="review-name">Ana Martins</span>
+                  <span class="review-local">Leblon — Rio de Janeiro</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="review-text">"Meu closet ficou além do que eu imaginava. Qualidade premium, detalhes incríveis e uma equipe extremamente profissional. Indico para todos os amigos."</p>
+              <div class="review-author">
+                <div class="review-avatar" aria-hidden="true">RF</div>
+                <div>
+                  <span class="review-name">Ricardo Fonseca</span>
+                  <span class="review-local">Barra da Tijuca — Rio de Janeiro</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="review-text">"Painel ripado em madeira nogueira no living transformou o ambiente. A DX entende de luxo com sutileza. Projeto entregue no prazo e com qualidade excepcional."</p>
+              <div class="review-author">
+                <div class="review-avatar" aria-hidden="true">CS</div>
+                <div>
+                  <span class="review-name">Carla Souza</span>
+                  <span class="review-local">Ipanema — Rio de Janeiro</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="review-text">"Contratei para o home office e o resultado foi extraordinário. Mesa em madeira maciça, estante planejada e todo o projeto com um acabamento de altíssimo nível."</p>
+              <div class="review-author">
+                <div class="review-avatar" aria-hidden="true">MO</div>
+                <div>
+                  <span class="review-name">Marcos Oliveira</span>
+                  <span class="review-local">Gávea — Rio de Janeiro</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="review-text">"A cozinha ficou perfeita! A equipe foi muito atenciosa em cada detalhe do projeto. O resultado final superou minhas expectativas. Recomendo sem hesitar."</p>
+              <div class="review-author">
+                <div class="review-avatar" aria-hidden="true">JP</div>
+                <div>
+                  <span class="review-name">Juliana Prado</span>
+                  <span class="review-local">Lagoa — Rio de Janeiro</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="review-text">"Profissionais de verdade. Do atendimento inicial ao pós-obra, tudo foi tratado com cuidado e dedicação. O dormitório planejado ficou lindo e funcional."</p>
+              <div class="review-author">
+                <div class="review-avatar" aria-hidden="true">LB</div>
+                <div>
+                  <span class="review-name">Lucas Braga</span>
+                  <span class="review-local">Botafogo — Rio de Janeiro</span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /reviews-track -->
+        </div>
+
+        <!-- Controles avaliações -->
+        <div class="reviews-controls">
+          <button class="pf-ctrl pf-ctrl--prev" id="rvPrev" aria-label="Avaliação anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="pf-dots" id="rvDots" role="tablist" aria-label="Slides de avaliações"></div>
+          <button class="pf-ctrl pf-ctrl--next" id="rvNext" aria-label="Próxima avaliação">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════ INSTAGRAM ═══════════ -->
+    <section class="ig-section bg-black-premium">
+      <div class="container">
+
+        <div class="ig-header">
+          <div>
+            <span class="eyebrow">Instagram</span>
+            <h2 class="ig-title">Acompanhe nossos projetos<br><em>em tempo real.</em></h2>
+          </div>
+          <a href="https://www.instagram.com/dx.marcenaria"
+             target="_blank" rel="noopener noreferrer"
+             class="ig-follow-btn"
+             aria-label="Seguir @dx.marcenaria no Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @dx.marcenaria
+          </a>
+        </div>
+
+        <div class="ig-grid">
+          <a href="https://www.instagram.com/reel/DP32uGpDrca/" target="_blank" rel="noopener noreferrer" class="ig-post reveal" aria-label="Ver post no Instagram da DX Marcenaria">
+            <div class="ig-img"><img src="imagens/foto1.webp" alt="" loading="lazy"></div>
+            <div class="ig-post-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+          </a>
+          <a href="https://www.instagram.com/reel/DPWZqYfDjzy/" target="_blank" rel="noopener noreferrer" class="ig-post reveal" aria-label="Ver post no Instagram da DX Marcenaria">
+            <div class="ig-img"><img src="imagens/foto2.webp" alt="" loading="lazy"></div>
+            <div class="ig-post-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+          </a>
+          <a href="https://www.instagram.com/reel/DLICEBvu_N0/" target="_blank" rel="noopener noreferrer" class="ig-post reveal" aria-label="Ver post no Instagram da DX Marcenaria">
+            <div class="ig-img"><img src="imagens/foto3.webp" alt="" loading="lazy"></div>
+            <div class="ig-post-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+          </a>
+          <a href="https://www.instagram.com/reel/CrJ9_ymtFck/" target="_blank" rel="noopener noreferrer" class="ig-post reveal" aria-label="Ver post no Instagram da DX Marcenaria">
+            <div class="ig-img"><img src="imagens/foto4.webp" alt="" loading="lazy"></div>
+            <div class="ig-post-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+          </a>
+          <a href="https://www.instagram.com/dx.marcenaria" target="_blank" rel="noopener noreferrer" class="ig-post reveal" aria-label="Ver post no Instagram da DX Marcenaria">
+            <div class="ig-img"><img src="imagens/foto5.webp" alt="" loading="lazy"></div>
+            <div class="ig-post-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+          </a>
+          <a href="https://www.instagram.com/dx.marcenaria" target="_blank" rel="noopener noreferrer" class="ig-post ig-post--cta reveal" aria-label="Seguir DX Marcenaria no Instagram">
+            <div class="ig-cta-inner">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              <p class="ig-cta-handle">@dx.marcenaria</p>
+              <p class="ig-cta-txt">Veja nossos projetos em tempo real</p>
+              <span class="ig-cta-btn">Seguir no Instagram</span>
+            </div>
+          </a>
+        </div><!-- /ig-grid -->
       </div>
     </section>
 
@@ -240,7 +527,7 @@
         <span class="eyebrow">Projeto sob medida</span>
         <h2 class="cta-title">Seu ambiente merece exclusividade.</h2>
         <p class="cta-text">Fale com a DX Marcenaria e solicite uma consultoria para o seu projeto.</p>
-        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-gold">Falar no WhatsApp</a>
+        <a href="https://wa.me/+5521991054322" target="_blank" class="btn btn-gold">Falar no WhatsApp</a>
       </div>
     </section>
 
@@ -279,18 +566,51 @@
     </section>
   </main>
 
+
+  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-      <p class="mb-0">© 2026 DX Marcenaria. Todos os direitos reservados.</p>
-      <div class="footer-links">
-        <a href="#home">Início</a>
-        <a href="#ambientes">Ambientes</a>
-        <a href="#contato">Contato</a>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <img src="imagens/logo-dx-bg.png" alt="DX Marcenaria" class="footer-logo" loading="lazy">
+          <p class="footer-desc">Estúdio de marcenaria premium no Rio de Janeiro.<br>Design autoral, execução precisa.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navegação do rodapé">
+          <a href="#sobre">Sobre</a>
+          <a href="#ambientes">Ambientes</a>
+          <a href="#projetos">Portfólio</a>
+          <a href="#processo">Processo</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="footer-social-col">
+          <p class="footer-social-label">Siga a DX</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/dx.marcenaria" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram DX Marcenaria">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @dx.marcenaria
+            </a>
+            <a href="https://wa.me/+5521991054322" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp DX Marcenaria">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              (21) 9 9999-0000
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 DX Marcenaria. Todos os direitos reservados. Rio de Janeiro — RJ.</p>
+        <p class="footer-bottom-tag">Marcenaria Premium · Móveis Sob Medida · Rio de Janeiro</p>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/5500000000000" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">WhatsApp</a>
+  <!-- WhatsApp float com ícone SVG -->
+  <a href="https://wa.me/5521999990000?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20projeto"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Falar no WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
